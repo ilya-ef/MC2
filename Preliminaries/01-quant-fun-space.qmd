@@ -42,7 +42,7 @@ Although there are hundreds of different kinds of units, we will need only four 
 - time, denoted T
 - length, denoted L
 - mass, denoted M
-- money, denoted V (for "value")
+- money, denoted S (from the name of the first coinage, the Mesopotamian Shekel)
 
 
 Consider the familiar rules of arithmetic. The basic actions---addition, subtraction, multiplication, division---apply to any two numbers (although division by zero is not allowed). So 17 + 1.3 is 18.3, whatever those numbers are meant to represent. But the two quantities 17 inches and 1.3 seconds (L and T, respectively) cannot be meaningfully added. To apply addition and subtraction, the two quantities must be in the same unit, hence the same dimension. If you encounter someone adding quantities with different dimensions, you know you have spotted an error.
