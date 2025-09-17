@@ -27,7 +27,7 @@ Costume designers use their imagination, often enhanced by referencing published
 
 
 
-Similarly, we will start with a pattern set of functions that have been collected from generations of experience. To remind us of their role in modeling, we will call these ***pattern-book functions***. These pattern-book functions are useful in describing diverse aspects of the real world and have simple calculus-related properties that make them relatively easy to deal with. There are just a handful of pattern-book functions from which untold numbers of useful modeling functions can be constructed. Mastering calculus is in part a matter of becoming familiar with the mathematical connections among the pattern-book functions, just as understanding a play calls for becoming familiear with the relationships among the characters.
+Similarly, we will start with a pattern set of functions that have been collected from generations of experience. To remind us of their role in modeling, we will call these ***pattern-book functions***. These pattern-book functions are useful in describing diverse aspects of the real world and have simple calculus-related properties that make them relatively easy to deal with. There are just a handful of pattern-book functions from which untold numbers of useful modeling functions can be constructed. Mastering calculus is in part a matter of becoming familiar with the mathematical connections among the pattern-book functions, just as understanding a play calls for becoming familiar with the relationships among the characters.
 
 @tbl-pattern-book-list is a list of our pattern-book functions written traditionally and in R. The list of pattern-book functions is short. You should memorize the names and be able easily to associate each name with the traditional notation.
 
@@ -424,7 +424,7 @@ It is essential that you recognize that the exponential function is utterly diff
 
 An exponential function, for instance, $e^x$ or $2^x$ or $10^x$ has a constant quantity raised to a power set by the input to the function.
 
-A power-law function works the reverse way: the input is raised to a constant quantity, as in $x^2$ or $x^10$.
+A power-law function works the reverse way: the input is raised to a constant quantity, as in $x^2$ or $x^{10}$.
 
 A mnemonic phrase for exponentials functions is
 
