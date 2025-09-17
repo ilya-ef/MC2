@@ -55,7 +55,7 @@ b <- 7
 ```
 :::
 
-We call `<-` the "**storage arrow**." Think of it as stowing the left-hand value in a box labelled with the name on the right-hand side. 
+We call `<-` the "**storage arrow**." Think of it as stowing the right-hand value in a box labelled with the name on the left-hand side. 
 When storing a value, R is designed *not* to display the value as happened in the imperative statements in Try it [-@try-very-first-one] and [-try-sqrt-17].
 
 ::: {.callout-important #try-store-1}
@@ -75,7 +75,7 @@ The message "object 'b' not found" is an indication that nothing has yet been st
 
 Within a document, for instance a chapter of this book or from the MOSAIC Calculus [*Workbook*](https://dtkaplan.github.io/MC-Workbook/) all the active R chunks have access to the work of the other chunks in the document. Understandably, you need to *run the code* in a chunk in order for other chunks to access it.
 
-Whenever you refresh or re-open a document, the active R chunks will all in a not-yet-run state. You have to run the code individually for each chunk you want to use or which are used by other chunks. By and large, we write each R chunks to avoid the need to run earlier chunks ... but not always!
+Whenever you refresh or re-open a document, the active R chunks will all be in a not-yet-run state. You have to run the code individually for each chunk you want to use or which are used by other chunks. By and large, we write each R chunks to avoid the need to run earlier chunks ... but not always!
 
 ::: {.callout-tip}
 ## Using R as a stand-alone app
