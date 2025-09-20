@@ -7,7 +7,7 @@ source("../starter.R")
 Each pattern-book function is like a unique Lego block. With Lego, you build a castle or an airplane by combining the basic blocks together. Similarly, Chapters [-@sec-parameters] and [-@sec-assembling] introduce ways to build customized functions out of the pattern-book functions. 
 
 Before we start to build such customized functions, it is helpful to have a word vocabulary for describing the various features we might want to include in a customized function.
-Knowing and correctly using a handful of phrases about functions with a single input goes a long way in being able to communicate with other people . Often, the words make sense in everyday speech ("steep", "growing", "decaying", "goes up", "goes down", "flat").
+Knowing and correctly using a handful of phrases about functions with a single input goes a long way in being able to communicate with other people. Often, the words make sense in everyday speech ("steep", "growing", "decaying", "goes up", "goes down", "flat").
 
 Sometimes the words are used in everyday speech but the casual person isn't sure exactly what they mean. For instance, you will often hear the phrase "growing exponentially." The graph of the exponential function illustrates exactly this sort of growth: flat for small $x$ and growing steadily steeper and steeper as $x$ increases. 
 
@@ -30,7 +30,7 @@ For the sake of illustration, I'll use three pattern-book functions to illustrat
 ::: {#fig-three-for-illustration}
 reciprocal | sinusoid | exponential
 :--:|:--:|:--:
-![](www/pb-recip-gg.png)| ![](www/pb-gauss-gg.png) | ![](www/pb-log-gg.png) 
+![](www/pb-recip-gg.png)| ![](www/pb-sin-gg.png) | ![](www/pb-exp-gg.png) 
 
 Three pattern-book functions used to illustrate the function-shape words. 
 :::
@@ -142,7 +142,7 @@ A function is ***monotonic*** on a domain when the *sign* of the slope never cha
 
 Another way of thinking about monotonicity is to consider the order of inputs and outputs compared to a number line. If a function is monotonically increasing then it will preserve the order of inputs along the number line when it maps inputs to outputs, whereas a monotonically decreasing function will reverse the order. For instance, if the input $x$ comes before an input $y$ (i.e., $x<y$), then $f(x)<f(y)$ for monotonically *increasing* functions (the order is preserved), but $f(y)<f(x)$ for monotonically *decreasing* functions (the order of outputs is reversed).
 
-Of the pattern-book functions in @fig-three-for-illustration: both the exponential and the logarithm function are monotonic: the exponential grows monotonically as does the logarithm. The sinusoid is not monotonic over any domain longer than half a cycle: the function switches between positive slope and negative slope in different parts of the cycle (as is evident in @fig-slope-at-point2). 
+Of the pattern-book functions in @fig-three-for-illustration: the exponential and its intimate companion---the logarithm function are monotonic: the exponential grows monotonically as does the logarithm. The sinusoid is not monotonic over any domain longer than half a cycle: the function switches between positive slope and negative slope in different parts of the cycle (as is evident in @fig-slope-at-point2). 
     
 ## Periodicity
 
@@ -160,9 +160,9 @@ The idea of representing with sinusoids phenomena that are almost but not exactl
 
 Look at the graph of the exponential function in @fig-three-for-illustration. As $x \rightarrow -\infty$, that is, as $x$ goes more and more to the left of the domain, the output of the exponential function tends asymptotically to zero.
 
-2. When the **output** of a function gets bigger and bigger in size, going to $\infty$ or $-\infty$ without the input doing likewise. The visual appearance on a graph is like a sky-rocket: the output changes tremendously fast even though the input changes only a little. The vertical line that the skyrocket approaches is called a ***vertical asymptote***. The power-law function $x^{-1}$ has a ***vertical asymptote*** at $x=0$. If you were to consider inputs closer and closer to $x=0$, the outputs would grow larger and larger is magnitude, tending toward $\infty$ or $-\infty$.
+2. When the **output** of a function gets bigger and bigger in size, going to $\infty$ or $-\infty$ without the input doing likewise. The visual appearance on a graph is like a sky-rocket: the output changes tremendously fast even though the input changes only a little. The vertical line that the skyrocket approaches is called a ***vertical asymptote***. The power-law function $x^{-1}$ has a ***vertical asymptote*** at $x=0$. If you were to consider inputs closer and closer to $x=0$, the outputs would grow larger and larger in magnitude, tending toward $\infty$ or $-\infty$.
 
-Several of the pattern-book functions have horizontal or vertical asymptotes or both. For instance, the reciprocal function ($x^{-1}$) has a horizontal asymptote of zero for both $x \rightarrow \infty$ and $x \rightarrow -\infty$.
+Several of the pattern-book functions have horizontal or vertical asymptotes or both. For instance, the reciprocal function ($x^{-1}$), in addition to the vertical asymptote described in the previous paragraph, has a horizontal asymptote of zero for both $x \rightarrow \infty$ and $x \rightarrow -\infty$.
 
 The sinusoid has neither a vertical nor a horizontal asymptote. As input $x$ increases either to $-\infty$ or $\infty$, the output of the sinusoid continues to oscillate, never settling down to a single value. And, of course, the output of the sinusoid is everywhere $-1 \leq \sin(x) \leq 1$, so there is no possibility for a vertical asymptote.
 
