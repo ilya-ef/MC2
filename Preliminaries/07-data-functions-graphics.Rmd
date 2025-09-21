@@ -120,7 +120,7 @@ gf_point(stroke ~ bore, data=Engines)
 Running the code will create a point plot showing the relationship between engine `stroke` and `bore`. Each individual point is one row of the data frame
 :::
 
-Later in *MOSAIC Calculus*, we will discuss ways to construct functions that are a good match to data using the pattern-book functions. Here, our concern is graphing such functions on top of a point plot. So, without explanation (until later chapters), we will construct a power-law function, called, stroke(bore), that might be a good match to the data. The we will add a second layer to the point-plot graphic: a slice-plot of the function we've constructed.
+Later in *MOSAIC Calculus*, we will discuss ways to construct functions that are a good match to data using the pattern-book functions. Here, our concern is graphing such functions on top of a point plot. So, without explanation (until later chapters), we will construct a power-law function, called, stroke(bore), that might be a good match to the data. Then we will add a second layer to the point-plot graphic: a slice-plot of the function we've constructed.
 
 ::: {#lst-first-two-layers .column-page-right}
 ```{webr-r}
