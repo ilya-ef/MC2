@@ -26,7 +26,7 @@ Pcases %>%
              label_x=0.6, label_vjust = "left", size=1) 
 ```
 
-Cumulative officially confirmed COVID-19 cases (in 10000s) during the month of March, 2020. The $\\color{magenta}{\\text{magenta curve}}$ is $e^t$.
+Cumulative officially confirmed COVID-19 cases (in 10000s) during the month of March, 2020. The $\color{magenta}{\text{magenta curve}}$ is $e^t$.
 :::
 
 There is an obvious mismatch between the data and the function $e^t$. Does this mean the COVID pattern is not exponential?
@@ -53,7 +53,7 @@ The use of a parameter like $k$ does more than handle the formality of convertin
 ```{r echo=FALSE, warning=FALSE}
 Pcases %>%
   slice_plot(.0573*exp(0.19*t) ~ t, bounds(t=0:31), color="blue", label_x=0.5,
-             label_text="A exp(k t)\nA = 593 cases\nk=0.19 per day\n", label_vjust = "left")
+             label_text="A exp(k t)\nA = 573 cases\nk=0.19 per day\n", label_vjust = "left")
 ```
 
 Using the function form $A e^{kt}$ with parameters $k=0.19$ per day and $A = 0.0573$ cases (in 10000s) matches the COVID-case data well.
@@ -116,7 +116,7 @@ Tide levels oscillate up and down over time. This is analogous to the $\\sin(t)$
 
 The pattern-book $\sin()$ and the function $\color{magenta}{\text{level}}\color{blue}{(hour)}$ have similar shapes, so it seems reasonable to model the tide data as a sinusoid. However, the scale of the axes is different on the two graphs.
 
-To model the tide with a sinusoid, we need to modify the sinusoid to change the scale of the input and output. First, let's look at how to accomplish the ***input scaling***. Specifically, we want the pure-number input $t$ to the sinusoid be a function of the quantity $hour$. Our framework for this re-scaling is the straight-line function. We will replace the pattern-book input $t$ with a function $$t(\color{blue}{hour}) \equiv a\, \color{blue}{hour} + b\ .$$
+To model the tide with a sinusoid, we need to modify the sinusoid to change the scale of the input and output. First, let's look at how to accomplish the ***input scaling***. Specifically, we want the pure-number input $t$ to the sinusoid be a function of the quantity $hour$. Our framework for this re-scaling is the straight-line function. We will replace the pattern-book input $t$ with a function $$t({\color{blue}{hour}}) \equiv a\, {\color{blue}{hour}} + b\ .$$
 
 The challenge is to find values for the parameters $a$ and $b$ that will transform the $\color{blue}{\mathbf{\text{blue}}}$ horizontal axis into the **black** horizontal axis, like this:
 
@@ -126,7 +126,7 @@ scale_shift(0, 53, r=2, x0=-1, nticks=10) %>%
   gf_vline(xintercept=~49)
 ```
 
-By comparing the two axes, we can estimate that $\color{blue}{10} \rightarrow 4$ and $\color{blue}{100} \rightarrow 49$. With these two coordinate points, we can find the straight-line function that turns $\color{blue}{\mathbf{\text{blue}}}$ into **black** by plotting the coordinate pairs $(\color{blue}{0},1)$ and $(\color{blue}{100}, 51)$ and finding the straight-line function that connects the points.
+By comparing the two axes, we can estimate that ${\color{blue}{10}} \rightarrow 4$ and ${\color{blue}{100}} \rightarrow 49$. With these two coordinate points, we can find the straight-line function that turns $\color{blue}{\mathbf{\text{blue}}}$ into **black** by plotting the coordinate pairs $({\color{blue}{10}},4)$ and $({\color{blue}{100}}, 49)$ and finding the straight-line function that connects the points.
 
 ::: {#fig-blue-to-black-1}
 ```{r echo=FALSE, warning=FALSE}
@@ -152,10 +152,10 @@ gf_point(y ~ x, data = Pts) %>%
 The input scaling function must transform 10 into 4 and transform 100 into 49 to properly arrange the time scale with the scale for the pattern-book function.
 :::
 
-You can calculate for yourself that the function that relates $\color{blue}{\mathbf{\text{blue}}}$ to **black** is $$t(\color{blue}{time}) = \underbrace{\frac{1}{2}}_a \color{blue}{time}  \underbrace{-1\LARGE\strut}_b$$
+You can calculate for yourself that the function that relates $\color{blue}{\mathbf{\text{blue}}}$ to **black** is $$t({\color{blue}{time}}) = \underbrace{\frac{1}{2}}_a {\color{blue}{time}}  \underbrace{-1\LARGE\strut}_b$$
 
 Replacing the pure number $t$ as the input to pattern-book $\sin(t)$ with the transformed $\frac{1}{2} \color{blue}{time}$ we get a new function:
-$$g(\color{blue}{time}) \equiv \sin\left(\strut {\small\frac{1}{2}}\color{blue}{time} - 1\right)\ .$$
+$$g({\color{blue}{time}}) \equiv \sin\left(\strut {\small\frac{1}{2}}{\color{blue}{time}} - 1\right)\ .$$
 @fig-tides-ri2 plots $g()$ along with the actual tide data.
 
 ::: {#fig-tides-ri2}
@@ -195,8 +195,8 @@ The overall result of input and output scaling is to tailor the pattern-book fun
 
 Let's return to @fig-tides-ri2 which shows that the function $g(\color{blue}{time})$, which scales the input to the pattern-book sinusoid, has a much better alignment to the tide data. Still, the vertical axes of the two graphs in the figure are not the same.
 
-This is the job for ***output scaling***, which takes the output of $g(\color{blue}{time})$ (bottom graph) and scales it to match the $\color{magenta}{level}$ axis on the top graph. That is, we seek to align the **black** vertical scale with the $\color{magenta}{\mathbf{\text{magenta}}}$ vertical scale.
-To do this, we note that the range of the $g(\color{blue}{time})$ is -1 to 1, whereas the range of the tide-level is about 0.5 to 1.5. The output scaling will take the straight-line form
+This is the job for ***output scaling***, which takes the output of $g({\color{blue}{time}})$ (bottom graph) and scales it to match the $\color{magenta}{level}$ axis on the top graph. That is, we seek to align the **black** vertical scale with the $\color{magenta}{\mathbf{\text{magenta}}}$ vertical scale.
+To do this, we note that the range of the $g({\color{blue}{time}})$ is -1 to 1, whereas the range of the tide-level is about 0.5 to 1.5. The output scaling will take the straight-line form
 $${\color{magenta}{\text{level}}}({\color{blue}{time}}) = A\, g({\color{blue}{time}}) + B$$
 or, in graphical terms
 
@@ -274,8 +274,8 @@ $$e^{a x + b}= e^b e^{ax} = {\cal A} e^{ax}$$ where ${\cal A} \equiv e^b$.
 In the case of exponentials, writing the input scaling in the form $e^{a(x-x_0)}$ can provide additional insight. 
 
 A bit of symbolic manipulation of the model can provide some additional insight. As you know, the properties of exponentials and logarithms are such that
-$$A e^{at} = e^{\lb(A)} e^{at} = e^{a t + \ln(A)} = e^{a\left(\strut t + \lb(A)/a\right)} = e^{a(t-t_0)}\ ,$$
-where $$t_0 = - \ln(A)/a = - \ln(593)/0.19 = -33.6\ .$$
+$$A e^{at} = e^{\ln(A)} e^{at} = e^{a t + \ln(A)} = e^{a\left(\strut t + \ln(A)/a\right)} = e^{a(t-t_0)}\ ,$$
+where $$t_0 = - \ln(A)/a = - \ln(573)/0.19 = -33.4\ .$$
 You can interpret $t_0$ as the starting point of the pandemic. When $t = t_0$, the model output is $e^{k 0} = 1$: the first case. According to the parameters we matched to the data for March, the pandemic's first case would have happened about 33 days before March 1, which is late January. We know from other sources of information, the outbreak began in late January. It is remarkable that even though the curve was constructed without any data from January or even February, the data from March, translated through the curve-fitting process, pointed to the start of the outbreak. This is a good indication that the exponential form for the model is fundamentally correct.
 :::
 
