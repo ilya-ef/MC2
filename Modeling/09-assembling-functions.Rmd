@@ -78,7 +78,7 @@ In function *composition*, the order of the functions matters: $f(g(x))$ and $g(
 
 ## Function multiplication {#sec-function-multiplication}
 
-Multiplication is the third in our repertoire of methods for making new functions. To review, here are the first two methods involving combining a function $f()$ with a function $g():
+Multiplication is the third in our repertoire of methods for making new functions. To review, here are the first two methods involving combining a function $f()$ with a function $g()$:
 
 1. Linear combinations. Example: $n_1(t) \equiv 5 f(t) + 1.2 g(t)$.
 2. Function composition. There are two possibilities which produce two distinct functions:
